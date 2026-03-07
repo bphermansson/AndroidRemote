@@ -1,0 +1,35 @@
+{
+  "api_token": "BYT_TILL_ETT_LANGT_HEMLIGT_TOKEN",
+  "commands": [
+    {
+      "id": "lock-screen",
+      "title": "Las skarmen",
+      "command": "bash -lc 'sid=$(loginctl list-sessions --no-legend | awk -v u=\"$USER\" '\\''$3==u {print $1; exit}'\\''); [ -n \"$sid\" ] && loginctl lock-session \"$sid\" || { echo \"No active session found for $USER\" >&2; exit 1; }'",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "suspend",
+      "title": "Vilolage",
+      "command": "sudo -n /usr/bin/busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Suspend b false",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "volume-up",
+      "title": "Volym +5%",
+      "command": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "volume-down",
+      "title": "Volym -5%",
+      "command": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "play-pause",
+      "title": "Play/Paus",
+      "command": "playerctl play-pause",
+      "timeout_seconds": 10
+    }
+  ]
+}

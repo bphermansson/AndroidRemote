@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Android Remote</title>
+    <link rel="manifest" href="/static/manifest.json" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Android Remote</h1>
+      <p class="muted">Tryck pa en knapp for att kora ett kommando pa din Ubuntu-dator.</p>
+
+      <section class="card">
+        <label for="server">Server URL</label>
+        <input id="server" placeholder="http://192.168.1.10:8000" />
+
+        <label for="token">API token</label>
+        <input id="token" type="password" placeholder="Bearer-token fran commands.json" />
+
+        <button id="connect">Hamta knappar</button>
+      </section>
+
+      <section id="commands" class="commands"></section>
+
+      <section class="card">
+        <h2>Resultat</h2>
+        <pre id="result">Ingen aktivitet an.</pre>
+      </section>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

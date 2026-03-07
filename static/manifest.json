@@ -1,0 +1,9 @@
+{
+  "name": "Android Remote",
+  "short_name": "Remote",
+  "display": "standalone",
+  "start_url": "/",
+  "background_color": "#f4f5ef",
+  "theme_color": "#2f7f48",
+  "icons": []
+}

@@ -1,0 +1,100 @@
+:root {
+  --bg: #f4f5ef;
+  --panel: #ffffff;
+  --ink: #1f2a1f;
+  --muted: #5d6b5d;
+  --accent: #2f7f48;
+  --accent-2: #245f36;
+  --danger: #9b2c2c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top left, #dfe9cf, var(--bg));
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  margin: 4px 0 8px 0;
+}
+
+h2 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.card {
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 14px;
+  margin: 12px 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin: 10px 0 6px 0;
+}
+
+input,
+button {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #c9d3c9;
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 12px;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+button:hover {
+  background: var(--accent-2);
+  cursor: pointer;
+}
+
+.commands {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.cmd-btn {
+  text-align: left;
+}
+
+.cmd-danger {
+  background: var(--danger);
+}
+
+pre {
+  margin: 0;
+  background: #0f1810;
+  color: #d7e7d4;
+  padding: 12px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 130px;
+}
