@@ -79,6 +79,24 @@ Obs: Telefon och Ubuntu maste vara pa samma lokala nat (samma Wi-Fi/LAN).
 - Om du exponerar pa internet: lagg reverse proxy med TLS och IP-filter.
 - Anvand en separat Linux-anvandare med minimal behorighet.
 
+## Suspend-behorighet (for Vilolage-knappen)
+
+Skapa sudoers-regel for scriptet:
+
+```bash
+sudo tee /etc/sudoers.d/android-remote-suspend >/dev/null << 'EOF'
+patrik ALL=(root) NOPASSWD: /media/patrik/Extra1TB/Programmering/Python/AndroidRemote/scripts/suspend.sh
+EOF
+sudo chmod 440 /etc/sudoers.d/android-remote-suspend
+sudo visudo -cf /etc/sudoers.d/android-remote-suspend
+```
+
+Snabbtest:
+
+```bash
+sudo -n /media/patrik/Extra1TB/Programmering/Python/AndroidRemote/scripts/suspend.sh
+```
+
 ## Exempel: systemd-service
 
 Skapa `/etc/systemd/system/android-remote.service`:
